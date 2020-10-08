@@ -1,0 +1,53 @@
+<h2>Add new Todo</h2>
+<form class="formwidth" (ngSubmit)="onSubmit()" [formGroup]="todoFrm">
+  <table class="fullwidth" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="fullwidth">
+          <input matInput placeholder="Dealer Name" formControlName="dealerName">
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fullwidth">
+          <input matInput placeholder="WorkTopic" formControlName="workTopic">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <mat-form-field class="fullwidth">
+      <textarea matInput placeholder="Description" formControlName="description"></textarea>
+    </mat-form-field>
+  </p>
+  <table class="fullwidth" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <input matInput [matDatepicker]="pickerStart" placeholder="Start Date" formControlName="startDate">
+          <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+          <mat-datepicker #pickerStart></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="pickerEnd" placeholder="End Date" formControlName="endDate">
+            <mat-datepicker-toggle matSuffix [for]="pickerEnd"></mat-datepicker-toggle>
+            <mat-datepicker #pickerEnd></mat-datepicker>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="fullwidth">
+          <input matInput #postalcode maxlength="5" placeholder="Amount" formControlName="amount">
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+        <td>
+                <mat-checkbox formControlName="isdone">Is Done</mat-checkbox>
+        </td>
+    </tr>
+  </table>
+  <p>
+    <button type="submit" md-raised-button>Submit</button>
+  </p>
+</form>
